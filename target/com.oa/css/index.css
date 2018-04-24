@@ -1,0 +1,50 @@
+.index-top{
+    background-color: #f8f8f8;
+    width: 100%;
+    height: 90px;
+}
+.index-left{
+    margin: 0;
+    background-color: #686058;
+    width: 68px;
+    height: 791px;
+    float: left;
+}
+.index-left li {
+    list-style-type:none;
+    height: 30px;
+    line-height: 30px;
+}
+.index-left li img {
+    float: left;
+    width: 27px;
+    height: 27px;
+    cursor:pointer;
+}
+.index-left li span {
+    float: left;
+    font-size: 14px;
+    cursor:pointer;
+}
+body{
+    margin: 0;
+    height: 100%;
+    /*background-color: #c3ff3f;*/
+}
+
+.index-dow{
+    /*background-color: beige;*/
+    height: 791px;
+}
+.index-right{
+    height: 791px;
+    float: left;
+}
+.logo-img{
+    width: 80px;
+    margin: 10px 0 0 10px;
+}
+/*上 右 下 左*/
+.navigId-fu{
+    margin: 14px 0px 0px -35px;
+}

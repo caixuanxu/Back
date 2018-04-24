@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="/js/jquery-3.2.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/login.css"/>
+    <title>登录页面</title>
+</head>
+<body background="img/rui-li-271973-unsplash.jpg" style=" background-repeat:no-repeat;background-size:cover; background-attachment: fixed;">
+    <div class="pattern">
+        <div class="formlabele">username:<br></div>
+        <input type="text" id="username">
+        <br>
+        <div class="formlabele">password:<br></div>
+        <input type="password" id="password">
+        <br><br>
+        <input type="submit" id="login" value="login">
+        <input type="submit" value="Forgot？">
+    </div>
+</body>
+<script type="text/javascript">
+    $('#login').click(function(){
+        console.log("1");
+        $.ajax({
+            url: '/user/login.do',
+            type: 'POST', //GET
+            async: false,    //或false,是否异步
+            data: {
+                username: $('#username').val(),
+                password: $('#password').val(),
+            },
+            timeout: 5000,    //超时时间
+            dataType: 'json',    //返回的数据格式：json/xml/html/script/jsonp/text
+            success: function (data) {
+                if (data.status === 200) {
+                   console.log(data.msg);
+                   toMainMenu();
+                } else if (data.status === 400) {
+                   alert(data.msg);
+                }
+            },
+            // error: function () {
+            //     swal('错误', '服务器维护中!', 'error');
+            // }
+        })
+    });
+    function toMainMenu() {
+        location.href = "view/index.html";
+    }
+</script>
+</html>
